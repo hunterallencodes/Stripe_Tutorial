@@ -7,6 +7,7 @@ from .views import (
     profile,
     MembersAreaView,
     RegisterView,
+    UserAPIView,
 )
 
 
@@ -21,4 +22,5 @@ urlpatterns = [
     path('accounts/register/', RegisterView.as_view(), name="register"),
     path('accounts/subscribe/', inactive_subscription, name="subscribe"),
     path('accounts/profile/', profile, name="profile"),
+    path('accounts/users/api/', UserAPIView.as_view(), name="user-api"),
 ]

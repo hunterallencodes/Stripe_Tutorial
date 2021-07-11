@@ -13,14 +13,9 @@ environ.Env.read_env()
 DEBUG = env('DEBUG')
 SECRET_KEY = env('SECRET_KEY')
 
-STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
-STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
-STRIPE_PLAN_MONTHLY_ID = env('STRIPE_PLAN_MONTHLY_ID')
-STRIPE_PLAN_ANNUAL_ID = env('STRIPE_PLAN_ANNUAL_ID')
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '143.244.177.233']
 
 
 INSTALLED_APPS = [
@@ -34,6 +29,7 @@ INSTALLED_APPS = [
     # third party apps
     'corsheaders',
     'crispy_forms',
+    'rest_framework',
 
     # project apps
     'members',

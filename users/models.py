@@ -6,16 +6,6 @@ from PIL import Image
 
 class User(AbstractUser):
     email = models.EmailField()
-    paid_until = models.DateField(blank=True, null=True)
-
-    def set_paid_until(self, paid_until):
-        self.paid_until = paid_until
-        self.save()
-
-    def has_paid(self, current_date=datetime.date.today()):
-        if self.paid_until is None:
-            return False
-        return current_date < self.paid_until
 
     def __str__(self):
         return self.username

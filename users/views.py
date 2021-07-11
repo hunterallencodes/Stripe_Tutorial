@@ -6,13 +6,22 @@ from django.views.generic import (
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
+from rest_framework.generics import ListAPIView
+from rest_framework.permissions import AllowAny
 
 from .forms import UserRegisterForm
 from .mixins import SubscriptionRequiredMixin
+from .serializers import UserSerializer
 from members.models import Post
 
 
 User = get_user_model()
+
+
+class UserAPIView(ListAPIView):
+    permission_classes = [AllowAny,]
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
 
 
 class MembersAreaView(SubscriptionRequiredMixin, ListView):
