@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<img src="{{ user.profile.profile_image.url }}" alt="Profile image">
+	<p><b>Username:</b> {{ user.username|title }}</p>
+	{% if user.subscription.is_active %}
+	  <p><b>Subscription status:</b><span class="active"> Active</span></p>
+	{% else %}
+    <p><b>Subscription status:</b><span class="inactive"> Inactive</span></p>
+	{% endif %}
+{% endblock content %}

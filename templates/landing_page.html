@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<p>Welcome to My Cool Store!</p>
+	<a class="btn btn-primary" href="{% url 'users:login' %}">Login</a>
+	<a class="btn btn-primary" href="{% url 'users:register' %}">Register</a>
+{% endblock content %}
